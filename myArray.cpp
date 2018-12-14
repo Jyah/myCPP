@@ -32,7 +32,7 @@ int main()
     
     for(int i=0;i<4;i++)
     {
-        mul[i]=arr[i][1] * vec[1]+arr[i][2] * vec[2]+arr[i][3] * vec[3]+arr[i][4] * vec[4];
+        mul[i]=arr[i][0] * vec[0]+arr[i][1] * vec[1]+arr[i][2] * vec[2]+arr[i][3] * vec[3];
     }
     //output
     for(int i = 0;i<4;i++)
