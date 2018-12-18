@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "gameboard.hpp"
 
 int main()
 {
