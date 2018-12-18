@@ -46,8 +46,8 @@ void StudentRecord<T>::setId(int idIn)
 template<class T>
 void StudentRecord<T>::printGrades()
 {
-    std::cout<<"ID# "<<studentId<<": ";
+    std::cout<<"ID# "<<studentId<<":\n";
     for(int i=0;i<SIZE;++i)
-        std::cout<<grades[i]<<"\n ";
+        std::cout<<grades[i]<<"\n";
     std::cout<<"\n";
 }
