@@ -1,0 +1,3 @@
+/Users/jdo/test/CMakeFiles/rebuild_cache.dir
+/Users/jdo/test/CMakeFiles/edit_cache.dir
+/Users/jdo/test/CMakeFiles/DisplayImage.dir
