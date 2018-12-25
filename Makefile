@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.13.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jdo/test
+CMAKE_SOURCE_DIR = /Users/jdo/git-code/myCPP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jdo/test
+CMAKE_BINARY_DIR = /Users/jdo/git-code/myCPP
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jdo/test/CMakeFiles /Users/jdo/test/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jdo/git-code/myCPP/CMakeFiles /Users/jdo/git-code/myCPP/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jdo/test/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jdo/git-code/myCPP/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named DisplayImage
+# Target rules for targets named blank
 
 # Build rule for target.
-DisplayImage: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DisplayImage
-.PHONY : DisplayImage
+blank: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 blank
+.PHONY : blank
 
 # fast build rule for target.
-DisplayImage/fast:
-	$(MAKE) -f CMakeFiles/DisplayImage.dir/build.make CMakeFiles/DisplayImage.dir/build
-.PHONY : DisplayImage/fast
+blank/fast:
+	$(MAKE) -f CMakeFiles/blank.dir/build.make CMakeFiles/blank.dir/build
+.PHONY : blank/fast
 
-DisplayImage.o: DisplayImage.cpp.o
+blank.o: blank.cpp.o
 
-.PHONY : DisplayImage.o
+.PHONY : blank.o
 
 # target to build an object file
-DisplayImage.cpp.o:
-	$(MAKE) -f CMakeFiles/DisplayImage.dir/build.make CMakeFiles/DisplayImage.dir/DisplayImage.cpp.o
-.PHONY : DisplayImage.cpp.o
+blank.cpp.o:
+	$(MAKE) -f CMakeFiles/blank.dir/build.make CMakeFiles/blank.dir/blank.cpp.o
+.PHONY : blank.cpp.o
 
-DisplayImage.i: DisplayImage.cpp.i
+blank.i: blank.cpp.i
 
-.PHONY : DisplayImage.i
+.PHONY : blank.i
 
 # target to preprocess a source file
-DisplayImage.cpp.i:
-	$(MAKE) -f CMakeFiles/DisplayImage.dir/build.make CMakeFiles/DisplayImage.dir/DisplayImage.cpp.i
-.PHONY : DisplayImage.cpp.i
+blank.cpp.i:
+	$(MAKE) -f CMakeFiles/blank.dir/build.make CMakeFiles/blank.dir/blank.cpp.i
+.PHONY : blank.cpp.i
 
-DisplayImage.s: DisplayImage.cpp.s
+blank.s: blank.cpp.s
 
-.PHONY : DisplayImage.s
+.PHONY : blank.s
 
 # target to generate assembly for a file
-DisplayImage.cpp.s:
-	$(MAKE) -f CMakeFiles/DisplayImage.dir/build.make CMakeFiles/DisplayImage.dir/DisplayImage.cpp.s
-.PHONY : DisplayImage.cpp.s
+blank.cpp.s:
+	$(MAKE) -f CMakeFiles/blank.dir/build.make CMakeFiles/blank.dir/blank.cpp.s
+.PHONY : blank.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... DisplayImage"
-	@echo "... DisplayImage.o"
-	@echo "... DisplayImage.i"
-	@echo "... DisplayImage.s"
+	@echo "... blank"
+	@echo "... blank.o"
+	@echo "... blank.i"
+	@echo "... blank.s"
 .PHONY : help
 
 

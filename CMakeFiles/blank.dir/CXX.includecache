@@ -6,10 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/Users/jdo/git-code/myCPP/DisplayImage.cpp
-stdio.h
--
-opencv2/opencv.hpp
+/Users/jdo/git-code/myCPP/blank.cpp
+opencv2/highgui/highgui.hpp
+/Users/jdo/git-code/myCPP/opencv2/highgui/highgui.hpp
+iostream
 -
 
 /usr/local/include/boost/assert.hpp
@@ -1639,6 +1639,10 @@ opencv2/videoio.hpp
 /usr/local/include/opencv2/opencv2/videoio.hpp
 opencv2/highgui/highgui_c.h
 /usr/local/include/opencv2/opencv2/highgui/highgui_c.h
+
+/usr/local/include/opencv2/highgui/highgui.hpp
+opencv2/highgui.hpp
+/usr/local/include/opencv2/highgui/opencv2/highgui.hpp
 
 /usr/local/include/opencv2/highgui/highgui_c.h
 opencv2/core/core_c.h

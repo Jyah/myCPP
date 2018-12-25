@@ -1,3 +1,3 @@
-/Users/jdo/test/CMakeFiles/rebuild_cache.dir
-/Users/jdo/test/CMakeFiles/edit_cache.dir
-/Users/jdo/test/CMakeFiles/DisplayImage.dir
+/Users/jdo/git-code/myCPP/CMakeFiles/rebuild_cache.dir
+/Users/jdo/git-code/myCPP/CMakeFiles/edit_cache.dir
+/Users/jdo/git-code/myCPP/CMakeFiles/blank.dir
