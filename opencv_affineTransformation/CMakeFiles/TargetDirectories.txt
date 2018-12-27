@@ -1,0 +1,3 @@
+/Users/jdo/git-code/myCPP/opencv_affineTransformation/CMakeFiles/rebuild_cache.dir
+/Users/jdo/git-code/myCPP/opencv_affineTransformation/CMakeFiles/edit_cache.dir
+/Users/jdo/git-code/myCPP/opencv_affineTransformation/CMakeFiles/affinetrans.dir
