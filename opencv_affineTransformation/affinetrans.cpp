@@ -7,7 +7,7 @@ using namespace cv;
 using namespace std;
 int main( int argc, char** argv )
 {
-    CommandLineParser parser( argc, argv, "{@input | ../data/lena.jpg | input image}" );
+    CommandLineParser parser( argc, argv, "{@input | ../lena.jpg | input image}" );
     Mat src = imread( parser.get<String>( "@input" ) );
     if( src.empty() )
     {
