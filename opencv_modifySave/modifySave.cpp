@@ -17,6 +17,6 @@ int main( int argc, char** argv )
  namedWindow( "Gray image", WINDOW_AUTOSIZE );
  imshow( imageName, image );
  imshow( "Gray image", gray_image );
- waitKey(0);
+ //waitKey(0);
  return 0;
 }
