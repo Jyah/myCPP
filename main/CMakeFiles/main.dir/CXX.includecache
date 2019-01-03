@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jdo/git-code/myCPP/main/header.hpp
+iostream
+-
+sstream
+-
+
+/Users/jdo/git-code/myCPP/main/main.cpp
+header.hpp
+/Users/jdo/git-code/myCPP/main/header.hpp
+
