@@ -2,18 +2,18 @@
 #include "opencv2/imgproc/imgproc.hpp"
 
 using namespace std;
-
+using namespace cv;
 int main( int argc, char** argv ) {
 
-  cv::namedWindow( "Example 2-3", cv::WINDOW_AUTOSIZE );
-  cv::VideoCapture cap;
+  namedWindow( "Example 2-3", cv::WINDOW_AUTOSIZE );
+  VideoCapture cap;
   cap.open( string(argv[1]) );
 
-  cv::Mat frame;
+  Mat frame;
   for(;;) {
     cap >> frame;
     if( frame.empty() ) break;             // Ran out of film
-    cv::imshow( "Example 2-3", frame );
+        imshow( "Example 2-3", frame );
     if( (char) cv::waitKey(33) >= 0 ) break;
   }
 
