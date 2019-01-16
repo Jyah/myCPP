@@ -1,65 +1,26 @@
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-
 using namespace std;
 /**
-Encrypts a stream using the Caesar cipher.
-@param in thhe stream to read from
-@param out the stream to write to 
-@param k the encryption key
+Project Euler - Problem 1
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Find the sum of all the multiples of 3 or 5 below 1000.
 */
-void encrypt_file(ifstream& in, ofstream& out, int k)
-{
-	char ch;
-	while(in.get(ch))
-	{
-		out.put(ch+k);
-	}
-}
-int main(int argc,char* argv[])
-{
-	int key = 3;
-	int file_count = 0;//the number of files specified
-	ifstream in_file;
-	ofstream out_file;
 
-	for (int i = 1;i<argc;i++)//Process all command-like arguments
-	{
-		string arg = argv[i];//The currently processed argument
-		if(arg=="-d")
-		{
-			key = -3;
-		}
-		else //it is a file name
-		{
-			file_count++;
-			if(file_count ==1)//the first file name
-			{
-				in_file.open(arg.c_str());
-				if(in_file.fail())//Exit program if opening failed
-				{
-					cout<<"Error opeing input file"<<arg<<endl;
-					return 1;
-				}
-				else if(file_count==2)//the second file name
-				{
-					out_file.open(arg.c_str());
-					if(out_file.fail())
-					{
-						cout<<"Error opening output file" << arg << endl;
-						return 1;
-					}
-				}
-			}
-		}
-	}
-	if(file_count!=2)//exit if the user didn't specify two files
-	{
-		cout<<"Usage:"<<argv[0]<<"[-d] infile outfile" << endl;
-		return 1;
-	}
-	encrypt_file(in_file,out_file,key);
-	return 0;
+int main()
+{
+	const int N = 1000;
+	const int a = 3;
+	const int b = 5;
+	int n = 1;
+	int s = 0;
+
+while(n<N){
+   if((n % a)==0||(n % b) ==0)
+       {
+       	s = s+n;
+   		}   
+   		n = n+1;
+}
+
+	cout<<"sum of all the multiples of " << a <<" or " << b << " below " << N << " = " << s <<"\n";
 }
