@@ -13,14 +13,10 @@ int main()
 	const int b = 5;
 	int n = 1;
 	int s = 0;
-
-while(n<N){
-   if((n % a)==0||(n % b) ==0)
-       {
-       	s = s+n;
-   		}   
-   		n = n+1;
+	
+for(n = 0;n<N;n++)
+{
+   if((n % a)==0||(n % b) ==0){s = s+n;}   
 }
-
 	cout<<"sum of all the multiples of " << a <<" or " << b << " below " << N << " = " << s <<"\n";
 }
