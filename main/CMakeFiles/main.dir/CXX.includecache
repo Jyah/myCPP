@@ -9,4 +9,8 @@
 /Users/jdo/git-code/myCPP/main/main.cpp
 iostream
 -
+math.h
+-
+sstream
+-
 
