@@ -1,70 +1,75 @@
+#include "opencv2/imgproc.hpp"
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui.hpp"
 #include <iostream>
-#include <math.h>
-#include <sstream>
-#include <cmath>
-#include <vector>
+using namespace cv;
 using namespace std;
-/**
-A palindromic number reads the same both ways.
- The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
-Find the largest palindrome made from the product of two 3-digit numbers.
-*/
-int numDigit(int N)
-{	
-	int num = 0;
-	while(N>0)
-	{
-		N=N/10;
-	num++;
-	}
-	return num;
-}
-
-bool isPalindrome(int N0)
+int main( int argc, char** argv )
 {
-int count = 0;
-int N = N0;
-int num = numDigit(N0);
-int vec[num];
-int Np = 0;
-
-while(N !=0)
-{
-	vec[count] = N%10;
-    N = floor(N/10);
-    count = count+1;
+  cv::CommandLineParser parser(argc, argv,
+                               "{@input   |../data/lena.jpg|input image}"
+                               "{ksize   k|1|ksize (hit 'K' to increase its value)}"
+                               "{scale   s|1|scale (hit 'S' to increase its value)}"
+                               "{delta   d|0|delta (hit 'D' to increase its value)}"
+                               "{help    h|false|show help message}");
+  cout << "The sample uses Sobel or Scharr OpenCV functions for edge detection\n\n";
+  parser.printMessage();
+  cout << "\nPress 'ESC' to exit program.\nPress 'R' to reset values ( ksize will be -1 equal to Scharr function )";
+  // First we declare the variables we are going to use
+  Mat image,src, src_gray;
+  Mat grad;
+  const String window_name = "Sobel Demo - Simple Edge Detector";
+  int ksize = parser.get<int>("ksize");
+  int scale = parser.get<int>("scale");
+  int delta = parser.get<int>("delta");
+  int ddepth = CV_16S;
+  String imageName = parser.get<String>("@input");
+  // As usual we load our source image (src)
+  image = imread( imageName, IMREAD_COLOR ); // Load an image
+  // Check if image is loaded fine
+  if( image.empty() )
+  {
+    printf("Error opening image: %s\n", imageName.c_str());
+    return 1;
+  }
+  for (;;)
+  {
+    // Remove noise by blurring with a Gaussian filter ( kernel size = 3 )
+    GaussianBlur(image, src, Size(3, 3), 0, 0, BORDER_DEFAULT);
+    // Convert the image to grayscale
+    cvtColor(src, src_gray, COLOR_BGR2GRAY);
+    Mat grad_x, grad_y;
+    Mat abs_grad_x, abs_grad_y;
+    Sobel(src_gray, grad_x, ddepth, 1, 0, ksize, scale, delta, BORDER_DEFAULT);
+    Sobel(src_gray, grad_y, ddepth, 0, 1, ksize, scale, delta, BORDER_DEFAULT);
+    // converting back to CV_8U
+    convertScaleAbs(grad_x, abs_grad_x);
+    convertScaleAbs(grad_y, abs_grad_y);
+    addWeighted(abs_grad_x, 0.5, abs_grad_y, 0.5, 0, grad);
+    imshow(window_name, grad);
+    char key = (char)waitKey(0);
+    if(key == 27)
+    {
+      return 0;
+    }
+    if (key == 'k' || key == 'K')
+    {
+      ksize = ksize < 30 ? ksize+2 : -1;
+    }
+    if (key == 's' || key == 'S')
+    {
+      scale++;
+    }
+    if (key == 'd' || key == 'D')
+    {
+      delta++;
+    }
+    if (key == 'r' || key == 'R')
+    {
+      scale =  1;
+      ksize = -1;
+      delta =  0;
+    }
+  }
+  return 0;
 }
-// add up reversely
-for(int i = 0;i<count;i++)
-{
-    Np = vec[i]*pow(10,count-i-1) + Np;
-}
-
-if(Np==N0)
-{
-	return true;
-}
-else
-{
-	return false;
-}
-}
-
-int main()
-{
-	int N = 12121;
-	cout << N <<" is " << isPalindrome(N) <<"\n";
-	int m1 = 10000;
-for(int i = 0;i<1000;i++)
-{
-	for(int j = 0;j<1000;j++)
-	{
-		if(isPalindrome(i*j)&&i*j>m1)
-		{
-			m1 = i*j;
-		}
-	}
-}
-cout<<m1<<"\n";
-}
-
