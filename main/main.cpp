@@ -2,16 +2,20 @@
 using namespace std;
 int main()
 {
-	int N = 10000;
-	int i = 0;
-	int s = 0;
-	while(i < N)
+	int N = 4e6;
+	int a0 = 1;
+	int a1 = 2;
+	int a2 = a0+a1;
+	int s = a1;
+	while(a2<=N)
 	{
-		if ((i%3==0)||(i%5==0))
+		a0 = a1;
+		a1 = a2;
+		a2 = a0+a1;
+		if(a2%2==0)
 		{
-			s=s+i;
+			s = s+a2;
 		}
-		i++;
 	}
 	cout<<s<<"\n";
 	return 0;
